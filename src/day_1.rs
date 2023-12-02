@@ -2,10 +2,10 @@ use std::{collections::HashMap, io};
 
 use once_cell::sync::Lazy;
 
-use crate::fs::read_lines;
+use crate::fs::*;
 
 pub fn part_1() -> io::Result<u32> {
-    let result: u32 = read_lines("day_1.txt")?
+    let result: u32 = read_day(1)?
         .flat_map(|line| {
             let digits = line
                 .chars()
@@ -74,7 +74,7 @@ fn parse_out_digits(line: &String) -> Vec<u32> {
 }
 
 pub fn part_2() -> io::Result<u32> {
-    let result: u32 = read_lines("day_1.txt")?
+    let result: u32 = read_day(1)?
         .flat_map(|line| {
             let digits = parse_out_digits(&line);
             digits

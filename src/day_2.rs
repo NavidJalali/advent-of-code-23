@@ -2,7 +2,7 @@ use std::io;
 
 // Absolutely shameful
 
-use crate::fs::read_lines;
+use crate::fs::*;
 
 type ParseResult<A> = Option<(usize, A)>;
 
@@ -280,7 +280,7 @@ pub fn part_1() -> io::Result<u32> {
         blue: 14,
     };
 
-    let result: u32 = read_lines("day_2.txt")?
+    let result: u32 = read_day(2)?
         .map(|line| {
             let input = line.chars().collect::<Vec<char>>();
             let parse_result = parse_game(&input, 0);
@@ -304,7 +304,7 @@ pub fn part_1() -> io::Result<u32> {
 }
 
 pub fn part_2() -> io::Result<u32> {
-    let result: u32 = read_lines("day_2.txt")?
+    let result: u32 = read_day(2)?
         .flat_map(|line| {
             let input = line.chars().collect::<Vec<char>>();
             let parse_result = parse_game(&input, 0);
