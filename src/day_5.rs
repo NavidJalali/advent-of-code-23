@@ -1,6 +1,3 @@
-// get rid of dead code warnings
-#![allow(dead_code)]
-
 use std::{fmt::Debug, io, vec};
 
 use crate::fs::read_day;
@@ -18,23 +15,6 @@ impl Debug for Interval {
 }
 
 impl Interval {
-  fn split_at(&self, point: u64) -> Vec<Interval> {
-    if point < self.left || point > self.right {
-      vec![*self]
-    } else {
-      vec![
-        Interval {
-          left: self.left,
-          right: point - 1,
-        },
-        Interval {
-          left: point,
-          right: self.right,
-        },
-      ]
-    }
-  }
-
   fn intersection(&self, other: &Interval) -> Option<Interval> {
     if self.left > other.right || self.right < other.left {
       None
