@@ -212,30 +212,18 @@ struct Input {
 
 impl Input {
   fn submit(&mut self, state: &ParseState, triplet: (u64, u64, u64)) {
-    match state {
+    let tree = match state {
       ParseState::Seeds => panic!("Cannot submit triplets to seeds!"),
-      ParseState::SeedToSoil => self
-        .seed_to_soil
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-      ParseState::SoilToFertilizer => self
-        .soil_to_fertilizer
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-      ParseState::FertilizerToWater => self
-        .fertilizer_to_water
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-      ParseState::WaterToLight => self
-        .water_to_light
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-      ParseState::LightToTemperature => self
-        .light_to_temperature
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-      ParseState::TemperatureToHumidity => self
-        .temperature_to_humidity
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-      ParseState::HumidityToLocation => self
-        .humidity_to_location
-        .insert_from_triplet(triplet.0, triplet.1, triplet.2),
-    }
+      ParseState::SeedToSoil => &mut self.seed_to_soil,
+      ParseState::SoilToFertilizer => &mut self.soil_to_fertilizer,
+      ParseState::FertilizerToWater => &mut self.fertilizer_to_water,
+      ParseState::WaterToLight => &mut self.water_to_light,
+      ParseState::LightToTemperature => &mut self.light_to_temperature,
+      ParseState::TemperatureToHumidity => &mut self.temperature_to_humidity,
+      ParseState::HumidityToLocation => &mut self.humidity_to_location,
+    };
+
+    tree.insert_from_triplet(triplet.0, triplet.1, triplet.2)
   }
 }
 
