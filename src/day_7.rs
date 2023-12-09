@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 use std::{cmp::Ordering, fmt::Debug, io};
 
 use crate::fs::read_day;
