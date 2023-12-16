@@ -1,6 +1,6 @@
 use std::{
   collections::{HashSet, VecDeque},
-  io, result,
+  io,
 };
 
 use crate::fs::read_day;
