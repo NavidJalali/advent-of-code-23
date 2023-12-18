@@ -1,9 +1,7 @@
 use std::{
   collections::{BinaryHeap, HashSet},
   fmt::Debug,
-  io,
-  thread::sleep,
-  vec,
+  io, vec,
 };
 
 use crate::fs::read_day;
