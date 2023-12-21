@@ -11,6 +11,7 @@ mod day_18;
 mod day_19;
 mod day_2;
 mod day_20;
+mod day_21;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -21,9 +22,11 @@ mod day_9;
 
 mod fs;
 
-use crate::day_20::*;
+use crate::day_21::*;
 
 fn main() {
+  println!("Start");
   println!("Part 1: {:?}", part_1());
   println!("Part 2: {:?}", part_2());
+  println!("End");
 }
