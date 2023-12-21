@@ -128,7 +128,7 @@ pub fn part_1() -> io::Result<usize> {
             🟨
             
              <----->
-            r = steps/size - 1
+            r = steps / size - 1
 */      
 
 pub fn part_2() -> io::Result<usize> {
@@ -189,13 +189,6 @@ pub fn part_2() -> io::Result<usize> {
     + corner_left
     + tiny_triangles * (tiny_top_right + tiny_bottom_right + tiny_bottom_left + tiny_top_left)
     + chipped_squares * (chipped_top_right + chipped_bottom_right + chipped_bottom_left + chipped_top_left);
-
-  println!("{grid_radius}");
-  println!("{tiles_starting_with_odd_steps} {points_in_odd_tiles}");
-  println!("{tiles_starting_with_even_steps} {points_in_even_tiles}");
-  println!("{corner_top} {corner_right} {corner_bottom} {corner_left}");
-  println!("{tiny_top_right} {tiny_top_left} {tiny_bottom_right} {tiny_bottom_left}");
-  println!("{chipped_top_right} {chipped_top_left} {chipped_bottom_right} {chipped_bottom_left}");
 
   Ok(result)
 }
