@@ -136,7 +136,7 @@ pub fn part_2() -> io::Result<usize> {
   let steps_to_take = 26501365;
 
   let size = grid.len();
-  // Assert grid is square[]
+  // Assert grid is square
   assert_eq!(size, grid[0].len());
   // Assert start is at center
   assert_eq!(start, Point::new(grid.len() as i32 / 2, grid.len() as i32 / 2));
